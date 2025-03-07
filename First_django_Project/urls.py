@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp import views
+from myapp.plot_view import plot_view
+from myapp.views import cryptocurrency
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cryptocurrencies/', views.get_cryptocurrencies)
+    path('plot/', plot_view, name='plot_view'),
+    path('cryptocurrency', cryptocurrency, name='views')
 ]
